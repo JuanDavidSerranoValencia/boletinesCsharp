@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Security.Cryptography.X509Certificates;
 using System.Security.Permissions;
 using System.Threading.Tasks;
@@ -69,12 +71,18 @@ namespace Boletin.Entities
             string studenCode = Console.ReadLine();
             // Estudiante alumno =  new Estudiante();
             Estudiante alumno = estudiantes.FirstOrDefault(x => x.Code.Equals(studenCode));
-            Console.WriteLine("Por favor ingrese la nota del : ");
             switch (opcion)
             {
                 case 1:
-                    Console.WriteLine("Quiz Nro : {0}", (alumno.Quices.Count + 1));
-                    alumno.Quices.Add(float.Parse(Console.ReadLine()));
+                    int agregados = 0;
+                    Console.Write("Ingrese la cantidad de notas que desea registrar:");
+                    int cantidad = int.Parse(Console.ReadLine());
+                    while (agregados < cantidad)
+                    {   
+                        Console.WriteLine("Quiz Nro : {0}", (alumno.Quices.Count + 1));
+                        alumno.Quices.Add(float.Parse(Console.ReadLine()));
+                        agregados++;
+                    }
                     break;
                 case 2:
                     alumno.Trabajos.Add(float.Parse(Console.ReadLine()));

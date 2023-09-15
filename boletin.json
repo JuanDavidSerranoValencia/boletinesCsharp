@@ -18,18 +18,15 @@
   {
     "Code": "1",
     "Nombre": "carlos",
-    "Direccion": "sadsad",
-    "Edad": 2,
-    "Quices": [],
-    "Trabajos": [],
-    "Parciales": []
-  },
-  {
-    "Code": "1",
-    "Nombre": "asdsa",
-    "Direccion": "asdasd",
+    "Direccion": "asdsad",
     "Edad": 22,
-    "Quices": [],
+    "Quices": [
+      5.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
     "Trabajos": [],
     "Parciales": []
   }
