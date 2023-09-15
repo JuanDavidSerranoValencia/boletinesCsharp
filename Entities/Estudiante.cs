@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Security.Permissions;
 using System.Threading.Tasks;
 
@@ -48,7 +49,18 @@ namespace Boletin.Entities
             estudiante.Quices = new List<float>();
             estudiante.Trabajos = new List<float>();
             estudiante.Parciales = new List<float>();
-            estudiantes.Add(estudiante);
+            if (estudiantes.Any(x => x.code.Equals(estudiante.Code)))
+            {
+
+                Console.WriteLine("EL id ya esta registrado");
+
+            }
+            else
+            {
+                estudiantes.Add(estudiante);
+
+            }
+
         }
 
         public void RegistroNota(List<Estudiante> estudiantes, int opcion)
@@ -78,7 +90,8 @@ namespace Boletin.Entities
             int idx = estudiantes.FindIndex(p => p.Code.Equals(studenCode));
             estudiantes[idx] = alumno;
         }
-        public void RemoveItem(List<Estudiante> estudiantes){
+        public void RemoveItem(List<Estudiante> estudiantes)
+        {
             Console.Clear();
             Console.WriteLine("Ingrese el Codigo del Estudiante a Eliminar");
             string id = Console.ReadLine();
@@ -89,7 +102,7 @@ namespace Boletin.Entities
                 estudiantes.Remove(studentToRemove);
                 MisFunciones.SaveData(estudiantes);
             }
-        }    
+        }
     }
 
 }

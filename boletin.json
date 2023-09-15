@@ -14,5 +14,23 @@
     "Parciales": [
       4.0
     ]
+  },
+  {
+    "Code": "1",
+    "Nombre": "carlos",
+    "Direccion": "sadsad",
+    "Edad": 2,
+    "Quices": [],
+    "Trabajos": [],
+    "Parciales": []
+  },
+  {
+    "Code": "1",
+    "Nombre": "asdsa",
+    "Direccion": "asdasd",
+    "Edad": 22,
+    "Quices": [],
+    "Trabajos": [],
+    "Parciales": []
   }
 ]

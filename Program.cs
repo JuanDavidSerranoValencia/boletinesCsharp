@@ -11,7 +11,7 @@ internal class Program
         estudiantes = MisFunciones.LoadData();
         while (cicloMenu)
         {
-            Console.Clear();
+    
             Console.WriteLine("1. Registro de estudiantes");
             Console.WriteLine("2. Registro de notas");
             Console.WriteLine("3. Reportes e informes");
